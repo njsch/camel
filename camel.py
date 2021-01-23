@@ -9,7 +9,8 @@ Pulse Data International, Rapid Deployment Software, Programmers of other includ
 
 This code and software is provided 'as is' without any implied or express warranty."""
 
-import random, time
+from random import randint
+from time import sleep
 
 # Game Starts Here.
 
@@ -43,7 +44,7 @@ def gameStatus ()
     
     if you > lions: # You are ahead of the lions.
         # Let them move.
-        lions += rand(20) # Move at a random speed.
+        lions += randint(20) # Move at a random speed.
     
     if lions >= you and you >30:
         print("THE lions HAVE CAPTURED YOU!
@@ -62,7 +63,7 @@ def gameStatus ()
         print("You are in the middle of the desert at an oases. ")
     
     if you > 25:
-        lions += rand(10)
+        lions += randint(10)
         print("The lions are " + you-lions + " miles behind you.")
     
     print("You have travelled " + you + " miles altogether, and have " + 200-you + " more miles to go.")
@@ -112,20 +113,20 @@ def main ()
         
     elif mainInput == 2:
         # Walk normally.
-        you += rand(5) # Move randomly from 1 to 5 miles.
+        you += randint(5) # Move randomly from 1 to 5 miles.
         days -= 1 # Subtract one day from the camel.
         print("Your camel likes this paste! ")
         gocommands -= 1 # Subtract commands you have before drinking.
     elif mainInput == 3:
         # So try to run!
         gocommands -= 1 # You wasted one more command.
-        n = rand(4) # What happens here?
+        n = randint(4) # What happens here?
         # Let's see.
         if n = 1 then # The Note-taker chose the first action.
             # The first action is a sand-storm.
             print("YOU HAVE BEEN CAUGHT IN A SAND-STORM... ")
             print("GOOD LUCK! ")
-            you += rand(5) # Slow down.
+            you += randint(5) # Slow down.
         elsif n = 2 then # The Note-taker chose to perform the second action. This action is to let your camel find an oases.
             print("You have stopped at an Oases. Your camel is filling your canteen and eating figs. ")
             drinks = 6 # Put six more drinks in the canteen.
@@ -139,7 +140,7 @@ def main ()
             subInput = int(input("Your sub-command? "))
             if subInput == 7: # The number seven was pressed.
                 # Attempt an escape.
-                n = rand(2) # One of two things can happen.
+                n = randint(2) # One of two things can happen.
                 if n == 1: # You made it.
                     print("CONGRATULATIONS! YOU SUCCESSFULLY ESCAPED! ")
                 else: # Well, you didn't make it.
@@ -147,11 +148,11 @@ def main ()
             elsif subInput == 8: # The number eight was pressed.
                 print("Your ransom has been payed and you are free to go. The local council is collecting. ")
                 print("Just Wait ")
-                wait(10) # Stop for ten seconds.
-                you += rand(3) # Move from one to three miles.
+                sleep(10) # Stop for ten seconds.
+                you += randint(3) # Move from one to three miles.
                 # The kidnapper slowed you down.
         elif n = 4 then # Your camel is burning across the desert sands.
-            you += rand(20) # Randomly move from one to twenty miles.
+            you += randint(20) # Randomly move from one to twenty miles.
             print("Your camel is burning across the desert sands. ")
             days -= 3 # Subtract three days from your camel.
         
@@ -164,7 +165,7 @@ def main ()
     elif mainInput == 5: # Status Check Please?
         print("Your camel has " + days + " good days left. You have " + drinks + " drinks left in the canteen. You can go " + gocommands + " commands without drinking. BETTER WATCH FOR AN OASES. ")
     elif mainInput == 6: # HELP!
-        n = rand(2) # Chose whether to give out help or not.
+        n = randint(2) # Chose whether to give out help or not.
         if n == 1: # Give Help.
             print("Help has found you in a state of unconsciousness. ")            # Let the camel rest for a while.
             days = 7 # Your camel is rejubinated.
@@ -185,7 +186,7 @@ print("6 -- hope for help ")
 
 if line = 3 then # This isn't a loop. It generates
 # loser statements.
-n = rand(4) # We have five loser statements.
+n = randint(4) # We have five loser statements.
 print("Your body and soul lay a rest in the sand. ")
 if n = 1 then # This is the first loser statement.
 print("The National's Camel Union is not attending your funeral!!!!!! ")
