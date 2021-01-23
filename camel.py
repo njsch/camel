@@ -20,9 +20,9 @@ drinks = 0, # How many drinks you have left.
 gocommands = 0, # How many commands you have before you need another drink.
 days = 0, # How many good days your camel has left.
 n = 0 # Temporary random number usages.
-mainInput = None # Stores the user presses here.
+mainInput =  # Stores the user presses here.
 
-# Now, let's set up routines that initializes the variables:
+# Now, let's set up functions that initialize the variables:
 
 def init() # The function is called init.
     you = 0 # You haven't gone anywhere.
@@ -95,9 +95,10 @@ def main ()
         print("You get a half quart if found by help. ")
         print("If help does not find you after command '6', you lose. ")
     
-    init() # Call the subroutine to initialize the variables.
-    print("Good luck and good cameling! ")
-    gameStatus ()
+    else:
+        init() # Call the subroutine to initialize the variables.
+        print("Good luck and good cameling! ")
+        gameStatus ()
     
     mainInput = int(input("Your command?")) # Wait for the user to enter something
     if mainInput == 1: # Have a drink
@@ -126,8 +127,7 @@ def main ()
             print("GOOD LUCK! ")
             you += rand(5) # Slow down.
         elsif n = 2 then # The Note-taker chose to perform the second action. This action is to let your camel find an oases.
-            print("You have stopped at an Oases. Your camel is ")
-            print("filling your canteen and eating figs. ")
+            print("You have stopped at an Oases. Your camel is filling your canteen and eating figs. ")
             drinks = 6 # Put six more drinks in the canteen.
             gocommands = 4 # Reset the commands.
             n = 4 # Force the Note-taker to do the last action.
@@ -136,15 +136,15 @@ def main ()
             print("Luckily the local council has agreed to their ransom-demands...")
             print("You have a new set of commands. ")
             print("#7 attempt an escape, or #8 wait for payment.")
-            mainInput = int(input("Your sub-command? "))
-            if mainInput == 7: # The number seven was pressed.
+            subInput = int(input("Your sub-command? "))
+            if subInput == 7: # The number seven was pressed.
                 # Attempt an escape.
                 n = rand(2) # One of two things can happen.
                 if n == 1: # You made it.
                     print("CONGRATULATIONS! YOU SUCCESSFULLY ESCAPED! ")
                 else: # Well, you didn't make it.
                     print("You were mortally wounded by a gunshot wound while trying to escape. ")
-            elsif mainInput == 8: # The number eight was pressed.
+            elsif subInput == 8: # The number eight was pressed.
                 print("Your ransom has been payed and you are free to go. The local council is collecting. ")
                 print("Just Wait ")
                 wait(10) # Stop for ten seconds.
