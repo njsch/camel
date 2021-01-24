@@ -1,0 +1,2 @@
+Damien Garwood <damien@daygar.plus.com> - Programming and translation from Euphoria to Python.
+Nathaniel Schmidt <schmidty2244@gmail.com> - Programming and translation of code from Rapid Euphoria to Python.
