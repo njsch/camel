@@ -26,14 +26,14 @@ gameLost = False# Whether you have lost, mainly for the printLoss function.
 
 # Now, let's set up functions that initialize the variables:
 
-def init() # The function is called init.
+def init(): # The function is called init.
     you = 0 # You haven't gone anywhere.
     hyenas = 25 # The hyenas are 25 miles ahead of you.
     drinks = 6 # You have six drinks left in your canteen.
     gocommands = 4 # You have 4 commands without drinking.
     days = 7 # Your camel has 7 good days left.
 
-def printLoss ()
+def printLoss ():
     n = randint(1, 4) # We have five loser statements.
     print("Your body and soul lay a rest in the sand. ")
     if n == 1: # This is the first loser statement.
@@ -45,7 +45,7 @@ def printLoss ()
     elif n == 4: # This is the last loser statement.
         print("Turkeys should fly, not ride camels. ") # No more loser statements.
 
-def queryReplay ()
+def queryReplay ():
     if gameLost == True:
         printLoss ()
     mainInput = input ("Want another camel and a new game? (Pres Y for yes or N for no) ")
@@ -61,11 +61,11 @@ def queryReplay ()
         print ("Chicken!")
         exit ()
 
-def gameStatus ()
+def gameStatus ():
     # Check where you are before letting you proceed.
     # Did you win? Or did the hyenas capture you?
     # Or, maybe, you are still alive.
-    if you > 199:# You made it!
+    if you > 199: # You made it!
         print("YOU WIN! A party is given in your honor! ")
         print("The hyenas have been tamed and are planning to attend. ")
         queryReplay ()
@@ -75,7 +75,7 @@ def gameStatus ()
         hyenas += randint(1, 20) # Move at a random speed.
     
     if hyenas >= you and you >30:
-        print("THE hyenas HAVE CAPTURED YOU!
+        print("THE hyenas HAVE CAPTURED YOU!")
         print ("CAMEL AND PEOPLE SOUP IS THEIR FAVORITE DISH. ")
         gameLost = True
         queryReplay ()
@@ -94,7 +94,7 @@ def gameStatus ()
         queryReplay ()
     
     # Well? Let's continue!
-    if you = 0: # You are just starting.
+    if you == 0: # You are just starting.
         print("You are in the middle of the desert at an oases. ")
     
     if you > 25:
@@ -104,7 +104,7 @@ def gameStatus ()
     print("You have travelled " + you + " miles altogether, and have " + 200-you + " more miles to go.")
 
 # Now let's start the game.
-def main ()
+def main ():
     print("Welcome to The Game Of Camel. ")
     mainInput = input("Would you like instructions? Type Y for yes or N for no. ")
     mainInput = mainInput.upper ()
@@ -114,7 +114,7 @@ def main ()
         mainInput = input("Would you like instructions? Type Y for yes or N for no. ")
         mainInput = mainInput.upper ()
     
-    if mainInput == 'Y'
+    if mainInput == 'Y':
         # Give the instructions now.
         print("Welcome to the game of Camel. ")
         print("The object of the game is to travel 200 miles across the Great Desert. ")
@@ -140,10 +140,10 @@ def main ()
     mainInput = int(input("Your command?")) # Wait for the user to enter something
     if mainInput == 1: # Have a drink
         # Drink from your canteen.
-        if drinks = 0:
-'            print("YOU RAN OUT OF WATER. SORRY CHUM!!!!!! ")
-gameLost = True
-queryReplay ()
+        if drinks == 0:
+            print("YOU RAN OUT OF WATER. SORRY CHUM!!!!!! ")
+            gameLost = True
+            queryReplay ()
         else: # Get a drink?
             drinks -= 1
             print("BETTER WATCH FOR A OASIS. ")
@@ -163,13 +163,13 @@ queryReplay ()
         gameStatus ()
         n = randint(1, 4) # What happens here?
         # Let's see.
-        if n = 1 then # The computer chose the first action.
+        if n == 1: # The computer chose the first action.
             # The first action is a sand-storm.
             print("YOU HAVE BEEN CAUGHT IN A SAND-STORM... ")
             print("GOOD LUCK! ")
             you += randint(1, 5) # Slow down.
             gameStatus ()
-        elsif n = 2 then # The Note-taker chose to perform the second action. This action is to let your camel find an oases.
+        elif n == 2: # The Note-taker chose to perform the second action. This action is to let your camel find an oases.
             print("You have stopped at an Oases. Your camel is filling your canteen and eating figs. ")
             drinks = 6 # Put six more drinks in the canteen.
             gocommands = 4 # Reset the commands.
@@ -196,7 +196,7 @@ queryReplay ()
                 sleep(10) # Stop for ten seconds.
                 you += randint(1, 3) # Move from one to three miles.
                 # The kidnapper slowed you down.
-        elif n = 4 then # Your camel is burning across the desert sands.
+        elif n == 4: # Your camel is burning across the desert sands.
             you += randint(20) # Randomly move from one to twenty miles.
             print("Your camel is burning across the desert sands. ")
             days -= 3 # Subtract three days from your camel.
