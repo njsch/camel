@@ -16,18 +16,18 @@ from time import sleep
 
 # First, let's declare some global variables - bad practice but easier when translating from such a basic language such as euphoria:
 you = 0, # Where you are.
-Lions = 0, # The lions location.
+hyenas = 0, # The hyenas location.
 drinks = 0, # How many drinks you have left.
 gocommands = 0, # How many commands you have before you need another drink.
 days = 0, # How many good days your camel has left.
 n = 0 # Temporary random number usages.
-mainInput =  # Stores the user presses here.
+mainInput = 0 # Stores the user presses here.
 
 # Now, let's set up functions that initialize the variables:
 
 def init() # The function is called init.
     you = 0 # You haven't gone anywhere.
-    lions = 25 # The lions are 25 miles ahead of you.
+    hyenas = 25 # The hyenas are 25 miles ahead of you.
     drinks = 6 # You have six drinks left in your canteen.
     gocommands = 4 # You have 4 commands without drinking.
     days = 7 # Your camel has 7 good days left.
@@ -36,18 +36,18 @@ def init() # The function is called init.
 
 def gameStatus ()
     # Check where you are before letting you proceed.
-    # Did you win? Or did the lions capture you?
+    # Did you win? Or did the hyenas capture you?
     # Or, maybe, you are still alive.
     if you > 199:# You made it!
         print("YOU WIN! A party is given in your honor! ")
-        print("The lions have been tamed and are planning to attend. ")
+        print("The hyenas have been tamed and are planning to attend. ")
     
-    if you > lions: # You are ahead of the lions.
+    if you > hyenas: # You are ahead of the hyenas.
         # Let them move.
-        lions += randint(20) # Move at a random speed.
+        hyenas += randint(20) # Move at a random speed.
     
-    if lions >= you and you >30:
-        print("THE lions HAVE CAPTURED YOU!
+    if hyenas >= you and you >30:
+        print("THE hyenas HAVE CAPTURED YOU!
         print ("CAMEL AND PEOPLE SOUP IS THEIR FAVORITE DISH. ")
     if gocommands < 3: # You had better get a drink.
         print("W A R N I N G -- GET A DRINK ")
@@ -63,8 +63,8 @@ def gameStatus ()
         print("You are in the middle of the desert at an oases. ")
     
     if you > 25:
-        lions += randint(10)
-        print("The lions are " + you-lions + " miles behind you.")
+        hyenas += randint(10)
+        print("The hyenas are " + you-hyenas + " miles behind you.")
     
     print("You have travelled " + you + " miles altogether, and have " + 200-you + " more miles to go.")
 
@@ -82,7 +82,7 @@ def main ()
         # Give the instructions now.
         print("Welcome to the game of Camel. ")
         print("The object of the game is to travel 200 miles across the Great Desert. ")
-        print("A pride of nasty, ravenous lions will be chasing you. ")
+        print("A pride of nasty, ravenous hyenas will be chasing you. ")
         print("You will be asked for commands every so often. ")
         print("C O M M A N D S: ")
         print("1 -- drink from your canteen, ")
