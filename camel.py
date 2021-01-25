@@ -12,8 +12,6 @@ This code and software is provided 'as is' without any implied or express warran
 from random import randint
 from time import sleep
 
-# Game Starts Here.
-
 # First, let's declare some global variables - bad practice but easier when translating from such a basic language such as euphoria:
 you = 0 # Where you are.
 hyenas = 0 # The hyenas location.
@@ -24,9 +22,8 @@ n = 0 # Temporary random number usages.
 mainInput = 0 # Stores the user presses here.
 gameLost = False# Whether you have lost, mainly for the printLoss function.
 
-# Now, let's set up functions that initialize the variables:
-
-def init(): # The function is called init.
+# Now, let's  initialize the variables:
+def init():
     global you
     global hyenas
     global drinks
@@ -117,7 +114,7 @@ def gameStatus ():
         hyenas += randint(1, 10)
         print("The hyenas are " + you-hyenas + " miles behind you.")
     
-    print("You have travelled " + str(you) + " miles altogether, and have " + str(200-you) + " more miles to go.")
+    print("You have travelled {0} miles altogether, and have {1} more miles to go.".format (you, 200-you))
 
 # Now let's start the game.
 def main ():
