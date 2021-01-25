@@ -15,11 +15,11 @@ from time import sleep
 # Game Starts Here.
 
 # First, let's declare some global variables - bad practice but easier when translating from such a basic language such as euphoria:
-you = 0, # Where you are.
-hyenas = 0, # The hyenas location.
-drinks = 0, # How many drinks you have left.
-gocommands = 0, # How many commands you have before you need another drink.
-days = 0, # How many good days your camel has left.
+you = 0 # Where you are.
+hyenas = 0 # The hyenas location.
+drinks = 0 # How many drinks you have left.
+gocommands = 0 # How many commands you have before you need another drink.
+days = 0 # How many good days your camel has left.
 n = 0 # Temporary random number usages.
 mainInput = 0 # Stores the user presses here.
 gameLost = False# Whether you have lost, mainly for the printLoss function.
@@ -27,6 +27,12 @@ gameLost = False# Whether you have lost, mainly for the printLoss function.
 # Now, let's set up functions that initialize the variables:
 
 def init(): # The function is called init.
+    global you
+    global hyenas
+    global drinks
+    global gocommands
+    global days
+
     you = 0 # You haven't gone anywhere.
     hyenas = 25 # The hyenas are 25 miles ahead of you.
     drinks = 6 # You have six drinks left in your canteen.
@@ -34,6 +40,7 @@ def init(): # The function is called init.
     days = 7 # Your camel has 7 good days left.
 
 def printLoss ():
+    global n
     n = randint(1, 4) # We have five loser statements.
     print("Your body and soul lay a rest in the sand. ")
     if n == 1: # This is the first loser statement.
@@ -46,6 +53,8 @@ def printLoss ():
         print("Turkeys should fly, not ride camels. ") # No more loser statements.
 
 def queryReplay ():
+    global gameLost
+    global mainInput
     if gameLost == True:
         printLoss ()
     mainInput = input ("Want another camel and a new game? (Pres Y for yes or N for no) ")
@@ -62,6 +71,13 @@ def queryReplay ():
         exit ()
 
 def gameStatus ():
+    global you
+    global hyenas
+    global drinks
+    global gocommands
+    global days
+    global gameLost
+
     # Check where you are before letting you proceed.
     # Did you win? Or did the hyenas capture you?
     # Or, maybe, you are still alive.
@@ -101,10 +117,19 @@ def gameStatus ():
         hyenas += randint(1, 10)
         print("The hyenas are " + you-hyenas + " miles behind you.")
     
-    print("You have travelled " + you + " miles altogether, and have " + 200-you + " more miles to go.")
+    print("You have travelled " + str(you) + " miles altogether, and have " + str(200-you) + " more miles to go.")
 
 # Now let's start the game.
 def main ():
+    global you
+    global hyenas
+    global drinks
+    global gocommands
+    global days
+    global n
+    global gameLost
+    global gameInput
+
     print("Welcome to The Game Of Camel. ")
     mainInput = input("Would you like instructions? Type Y for yes or N for no. ")
     mainInput = mainInput.upper ()
