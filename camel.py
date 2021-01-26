@@ -201,7 +201,7 @@ def main ():
             # Walk normally.
             you += randint(1, 5) # Move randomly from 1 to 5 miles.
             days -= 1 # Subtract one day from the camel.
-            print("Your camel likes this paste! ")
+            print("Your camel likes this pace! ")
             gocommands -= 1 # Subtract commands you have before drinking.
             gameStatus ()
         elif mainInput == 3:
@@ -256,7 +256,7 @@ def main ():
             gocommands -= 1 # Lose one more command.
             gameStatus ()
         elif mainInput == 5: # Status Check Please?
-            print("Your camel has " + days + " good days left. You have " + drinks + " drinks left in the canteen. You can go " + gocommands + " commands without drinking. BETTER WATCH FOR AN OASES. ")
+            print("Your camel has {0} good days left. You have {1} drinks left in the canteen. You can go {2} commands without drinking.".format(days, drinks, gocommands))
         elif mainInput == 6: # HELP!
             n = randint(1, 2) # Chose whether to give out help or not.
             if n == 1: # Give Help.
@@ -270,6 +270,17 @@ def main ():
                 print ("You waited, and waited... and waited... but no help arrived.")
                 gameLost = True
                 queryReplay ()
+        elif mainInput == 7: # Exit
+            exitQuery = input ("Are you sure you want to exit? Press Y or N.")
+            exitQuery = exitQuery.upper ()
+            while exitQuery != "Y" and exitQuery != "N":
+                print ("Please enter either Y or N.")
+                exitQuery = input ("Are you sure you want to exit? Press Y or N.")
+                exitQuery = exitQuery.upper ()
+            if exitQuery == "Y": 
+                exit ()
+            else:
+                print ("Okay.")
         else: # Invalid option.
             print("Invalid Option. ")
             print("The commands you can choose from are: ")
