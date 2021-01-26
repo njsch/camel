@@ -103,6 +103,7 @@ def queryReplay ():
         mainInput = input ("Want another game? (Pres Y for yes or N for no) ")
         mainInput = mainInput.upper ()
     if mainInput == 'Y':
+        gameLost = False
         main ()
     else:
         print ("Chicken!")
@@ -177,12 +178,11 @@ def main ():
     gameStatus ()
     
     while gameLost != True:
-        mainInput = int(input("Your command?"))
-        while not isinstance (mainInput, int):
-            print ("Please enter a number.")
+        try:
             mainInput = int(input("Your command?"))
-        else:
-            int(mainInput)
+        except:
+            print ("Make sure you only enter a number.")
+            mainInput = int(input("Your command?"))
         if mainInput == 1: # Have a drink
             # Drink from your canteen.
             if drinks == 0:
