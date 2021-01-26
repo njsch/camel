@@ -178,11 +178,13 @@ def main ():
     gameStatus ()
     
     while gameLost != True:
-        try:
-            mainInput = int(input("Your command?"))
-        except:
-            print ("Make sure you only enter a number.")
-            mainInput = int(input("Your command?"))
+        while True:
+            try:
+                mainInput = int(input("Your command?"))
+                break
+            except ValueError:
+                print ("Make sure you only enter a number.")
+                continue
         if mainInput == 1: # Have a drink
             # Drink from your canteen.
             if drinks == 0:
