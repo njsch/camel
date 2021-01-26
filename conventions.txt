@@ -1,6 +1,0 @@
-The following is a list of conventions that are strongly recommended to use in the source code:
-
-* Four-space indent
-* Two line breaks between code blocks where possible
-* Camel-case for variable, functions / method and module names
-* Spaces between operators and operands where possible; and possibly between function / class names and their parentheses
