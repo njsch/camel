@@ -22,6 +22,41 @@ n = 0 # Temporary random number usages.
 mainInput = 0 # Stores the user presses here.
 gameLost = False# Whether you have lost, mainly for the printLoss function.
 
+def queryInstructions (prompt):
+    global mainInput
+    instructions = """Welcome to the game of Camel. 
+The object of the game is to travel 200 miles across the Great Desert. 
+A pack of nasty, ravenous hyenas will be chasing you. 
+You will be asked for commands every so often. 
+
+C O M M A N D S: 
+1 -- drink from your canteen, 
+2 -- move ahead moderate speed, 
+3 -- move ahead fast speed, 
+4 -- stop for a rest, 
+5 -- status check, 
+6 -- hope for help,
+and 7 -- exit.
+
+You will get a quart of water which will last you six drinks. 
+You must renew your water supply at an Oases completely. 
+You get a half quart if found by help. 
+If help does not find you after command '6', you lose."""
+    
+    mainInput = input(prompt)
+    mainInput = mainInput.upper ()
+    
+    while mainInput != "Y" and mainInput != "N":
+        print ("Please enter either 'y' or 'n'")
+        mainInput = input("Would you like instructions? Type Y for yes or N for no. ")
+        mainInput = mainInput.upper ()
+    
+    if mainInput == 'Y':
+        print (instructions)
+        queryInstructions ("Would you like to hear the instructions again? Type Y for yes or N for no.")
+    else:
+        print("Good luck and good cameling! ")
+
 # Now, let's  initialize the variables:
 def init():
     global you
@@ -126,38 +161,12 @@ def main ():
     global n
     global gameLost
     global gameInput
-
+    
     print("Welcome to The Game Of Camel. ")
-    mainInput = input("Would you like instructions? Type Y for yes or N for no. ")
-    mainInput = mainInput.upper ()
+    queryInstructions ("Would you like to hear game instructions? Type Y for yes or N for no.")
     
-    while mainInput != "Y" and mainInput != "N":
-        print ("Please enter either 'y' or 'n'")
-        mainInput = input("Would you like instructions? Type Y for yes or N for no. ")
-        mainInput = mainInput.upper ()
-    
-    if mainInput == 'Y':
-        # Give the instructions now.
-        print("Welcome to the game of Camel. ")
-        print("The object of the game is to travel 200 miles across the Great Desert. ")
-        print("A pride of nasty, ravenous hyenas will be chasing you. ")
-        print("You will be asked for commands every so often. ")
-        print("C O M M A N D S: ")
-        print("1 -- drink from your canteen, ")
-        print("2 -- move ahead moderate speed, ")
-        print("3 -- move ahead fast speed, ")
-        print("4 -- stop for a rest, ")
-        print("5 -- status check, ")
-        print("and 6 -- hope for help. ")
-        print("You will get a quart of water which will last you six drinks. ")
-        print("You must renew your water supply at an Oases completely. ")
-        print("You get a half quart if found by help. ")
-        print("If help does not find you after command '6', you lose. ")
-    
-    else:
-        print("Good luck and good cameling! ")
-        init() # Call the function to initialize the variables.
-        gameStatus ()
+    init() # Call the function to initialize the variables.
+    gameStatus ()
     
     mainInput = int(input("Your command?")) # Wait for the user to enter something
     if mainInput == 1: # Have a drink
