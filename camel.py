@@ -23,6 +23,9 @@ mainInput = 0 # Stores the user presses here.
 gameLost = False# Whether you have lost, mainly for the printLoss function.
 
 def queryInstructions (prompt):
+    """Ask the user whether they want instructions, then recursively query the user for instructions until the user declines.
+    @param prompt: The output prompt containing the query for the user to answer.
+    @type prompt: str"""
     global mainInput
     instructions = """Welcome to the game of Camel. 
 The object of the game is to travel 200 miles across the Great Desert. 
@@ -59,6 +62,7 @@ If help does not find you after command '6', you lose."""
 
 # Now, let's  initialize the variables:
 def init():
+    """Initialise global variable identifiers with required initial value assignments to allow the game to start."""
     global you
     global hyenas
     global drinks
@@ -72,6 +76,7 @@ def init():
     days = 7 # Your camel has 7 good days left.
 
 def printLoss ():
+    """Print a random loss message from a randomised selection."""
     global n
     n = randint(1, 4) # We have five loser statements.
     print("Your body and soul lay a rest in the sand. ")
@@ -85,6 +90,7 @@ def printLoss ():
         print("Turkeys should fly, not ride camels. ") # No more loser statements.
 
 def queryReplay ():
+    """Ask whether to play the game again or exit."""
     global gameLost
     global mainInput
     if gameLost == True:
@@ -103,6 +109,7 @@ def queryReplay ():
         exit ()
 
 def gameStatus ():
+    """Figure out what to do based on the current state of global vars."""
     global you
     global hyenas
     global drinks
@@ -153,6 +160,7 @@ def gameStatus ():
 
 # Now let's start the game.
 def main ():
+    """Main procedure for the game."""
     global you
     global hyenas
     global drinks
