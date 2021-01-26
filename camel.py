@@ -168,7 +168,7 @@ def main ():
     global days
     global n
     global gameLost
-    global gameInput
+    global mainInput
     
     print("Welcome to The Game Of Camel. ")
     queryInstructions ("Would you like to hear game instructions? Type Y for yes or N for no.")
@@ -176,101 +176,107 @@ def main ():
     init() # Call the function to initialize the variables.
     gameStatus ()
     
-    mainInput = int(input("Your command?")) # Wait for the user to enter something
-    if mainInput == 1: # Have a drink
-        # Drink from your canteen.
-        if drinks == 0:
-            print("YOU RAN OUT OF WATER. SORRY CHUM!!!!!! ")
-            gameLost = True
-            queryReplay ()
-        else: # Get a drink?
-            drinks -= 1
-            print("BETTER WATCH FOR A OASIS. ")
-            gocommands = 4 # Reset how many commands you can go before drinking.
+    while gameLost != True:
+        mainInput = int(input("Your command?"))
+        while not isinstance (mainInput, int):
+            print ("Please enter a number.")
+            mainInput = int(input("Your command?"))
+        else:
+            int(mainInput)
+        if mainInput == 1: # Have a drink
+            # Drink from your canteen.
+            if drinks == 0:
+                print("YOU RAN OUT OF WATER. SORRY CHUM!!!!!! ")
+                gameLost = True
+                queryReplay ()
+            else: # Get a drink?
+                drinks -= 1
+                print("BETTER WATCH FOR A OASIS. ")
+                gocommands = 4 # Reset how many commands you can go before drinking.
+                gameStatus ()
+            
+        elif mainInput == 2:
+            # Walk normally.
+            you += randint(1, 5) # Move randomly from 1 to 5 miles.
+            days -= 1 # Subtract one day from the camel.
+            print("Your camel likes this paste! ")
+            gocommands -= 1 # Subtract commands you have before drinking.
             gameStatus ()
-        
-    elif mainInput == 2:
-        # Walk normally.
-        you += randint(1, 5) # Move randomly from 1 to 5 miles.
-        days -= 1 # Subtract one day from the camel.
-        print("Your camel likes this paste! ")
-        gocommands -= 1 # Subtract commands you have before drinking.
-        gameStatus ()
-    elif mainInput == 3:
-        # So try to run!
-        gocommands -= 1 # You wasted one more command.
-        gameStatus ()
-        n = randint(1, 4) # What happens here?
-        # Let's see.
-        if n == 1: # The computer chose the first action.
-            # The first action is a sand-storm.
-            print("YOU HAVE BEEN CAUGHT IN A SAND-STORM... ")
-            print("GOOD LUCK! ")
-            you += randint(1, 5) # Slow down.
+        elif mainInput == 3:
+            # So try to run!
+            gocommands -= 1 # You wasted one more command.
             gameStatus ()
-        elif n == 2: # The Note-taker chose to perform the second action. This action is to let your camel find an oases.
-            print("You have stopped at an Oases. Your camel is filling your canteen and eating figs. ")
-            drinks = 6 # Put six more drinks in the canteen.
-            gocommands = 4 # Reset the commands.
+            n = randint(1, 4) # What happens here?
+            # Let's see.
+            if n == 1: # The computer chose the first action.
+                # The first action is a sand-storm.
+                print("YOU HAVE BEEN CAUGHT IN A SAND-STORM... ")
+                print("GOOD LUCK! ")
+                you += randint(1, 5) # Slow down.
+                gameStatus ()
+            elif n == 2: # The Note-taker chose to perform the second action. This action is to let your camel find an oases.
+                print("You have stopped at an Oases. Your camel is filling your canteen and eating figs. ")
+                drinks = 6 # Put six more drinks in the canteen.
+                gocommands = 4 # Reset the commands.
+                gameStatus ()
+                n = 4 # Force the Note-taker to do the last action.
+            elif n == 3: # Oops! The Note-taker chose the third action. This action gets you caught by a hidden crazy kidnapper.
+                print("YOU HAVE BEEN CAPTURED BY some HIDDEN CRAZY KIDNAPPERS. ")
+                print("Luckily the local council has agreed to their ransom-demands...")
+                print("You have a new set of commands. ")
+                print("#7 attempt an escape, or #8 wait for payment.")
+                subInput = int(input("Your sub-command? "))
+                if subInput == 7: # The number seven was pressed.
+                    # Attempt an escape.
+                    n = randint(1, 2) # One of two things can happen.
+                    if n == 1: # You made it.
+                        print("CONGRATULATIONS! YOU SUCCESSFULLY ESCAPED! ")
+                    else: # Well, you didn't make it.
+                        print("You were mortally wounded by a gunshot wound while trying to escape. ")
+                        gameLost = True
+                        queryReplay ()
+                elif subInput == 8: # The number eight was pressed.
+                    print("Your ransom has been payed and you are free to go. The local council is collecting. ")
+                    print("Just Wait ")
+                    sleep(10) # Stop for ten seconds.
+                    you += randint(1, 3) # Move from one to three miles.
+                    # The kidnapper slowed you down.
+            elif n == 4: # Your camel is burning across the desert sands.
+                you += randint(20) # Randomly move from one to twenty miles.
+                print("Your camel is burning across the desert sands. ")
+                days -= 3 # Subtract three days from your camel.
+                gameStatus ()
+            
+    # You should never get here unless you press number 4.
+        elif mainInput == 4: # let the camel rest.
+            print("Your camel thanks you. ")
+            days = 7 # You now have seven good days left.
+            gocommands -= 1 # Lose one more command.
             gameStatus ()
-            n = 4 # Force the Note-taker to do the last action.
-        elif n == 3: # Oops! The Note-taker chose the third action. This action gets you caught by a hidden crazy kidnapper.
-            print("YOU HAVE BEEN CAPTURED BY some HIDDEN CRAZY KIDNAPPERS. ")
-            print("Luckily the local council has agreed to their ransom-demands...")
-            print("You have a new set of commands. ")
-            print("#7 attempt an escape, or #8 wait for payment.")
-            subInput = int(input("Your sub-command? "))
-            if subInput == 7: # The number seven was pressed.
-                # Attempt an escape.
-                n = randint(1, 2) # One of two things can happen.
-                if n == 1: # You made it.
-                    print("CONGRATULATIONS! YOU SUCCESSFULLY ESCAPED! ")
-                else: # Well, you didn't make it.
-                    print("You were mortally wounded by a gunshot wound while trying to escape. ")
-                    gameLost = True
-                    queryReplay ()
-            elif subInput == 8: # The number eight was pressed.
-                print("Your ransom has been payed and you are free to go. The local council is collecting. ")
-                print("Just Wait ")
-                sleep(10) # Stop for ten seconds.
-                you += randint(1, 3) # Move from one to three miles.
-                # The kidnapper slowed you down.
-        elif n == 4: # Your camel is burning across the desert sands.
-            you += randint(20) # Randomly move from one to twenty miles.
-            print("Your camel is burning across the desert sands. ")
-            days -= 3 # Subtract three days from your camel.
-            gameStatus ()
-        
-# You should never get here unless you press number 4.
-    elif mainInput == 4: # let the camel rest.
-        print("Your camel thanks you. ")
-        days = 7 # You now have seven good days left.
-        gocommands -= 1 # Lose one more command.
-        gameStatus ()
-    elif mainInput == 5: # Status Check Please?
-        print("Your camel has " + days + " good days left. You have " + drinks + " drinks left in the canteen. You can go " + gocommands + " commands without drinking. BETTER WATCH FOR AN OASES. ")
-    elif mainInput == 6: # HELP!
-        n = randint(1, 2) # Chose whether to give out help or not.
-        if n == 1: # Give Help.
-            print("Help has found you in a state of unconsciousness. ")            # Let the camel rest for a while.
-            days = 7 # Your camel is rejubinated.
-            drinks = 3 # You get the half-quart of water.
-            # You drink some water and get more commands.
-            gocommands = 8 # You now have eight commands without drinking.
-            gameStatus ()
-        else: # Help hasn't found you.
-            print ("You waited, and waited... and waited... but no help arrived.")
-            gameLost = True
-            queryReplay ()
-    else: # Invalid option.
-        print("Invalid Option. ")
-        print("The commands you can choose from are: ")
-        print("1 -- drink from your canteen ")
-        print("2 -- move ahead moderate speed ")
-        print("3 -- move ahead fast speed ")
-        print("4 -- stop for a rest ")
-        print("5 -- status check ")
-        print("6 -- hope for help ")
+        elif mainInput == 5: # Status Check Please?
+            print("Your camel has " + days + " good days left. You have " + drinks + " drinks left in the canteen. You can go " + gocommands + " commands without drinking. BETTER WATCH FOR AN OASES. ")
+        elif mainInput == 6: # HELP!
+            n = randint(1, 2) # Chose whether to give out help or not.
+            if n == 1: # Give Help.
+                print("Help has found you in a state of unconsciousness. ")                # Let the camel rest for a while.
+                days = 7 # Your camel is rejubinated.
+                drinks = 3 # You get the half-quart of water.
+                # You drink some water and get more commands.
+                gocommands = 8 # You now have eight commands without drinking.
+                gameStatus ()
+            else: # Help hasn't found you.
+                print ("You waited, and waited... and waited... but no help arrived.")
+                gameLost = True
+                queryReplay ()
+        else: # Invalid option.
+            print("Invalid Option. ")
+            print("The commands you can choose from are: ")
+            print("1 -- drink from your canteen ")
+            print("2 -- move ahead moderate speed ")
+            print("3 -- move ahead fast speed ")
+            print("4 -- stop for a rest ")
+            print("5 -- status check ")
+            print("6 -- hope for help ")
 
 if __name__ == "__main__":
     main ()
