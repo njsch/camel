@@ -138,7 +138,7 @@ def gameStatus ():
     
     if gocommands < 3: # You had better get a drink.
         print("W A R N I N G -- GET A DRINK ")
-    if gocommands == 0: # Too many commands without drinking.
+    if gocommands < 0: # Too many commands without drinking.
         print("YOU RAN OUT OF WATER... SORRY CHUM!!!!!! ")
         gameLost = True
         queryReplay ()
@@ -187,7 +187,7 @@ def main ():
                 continue
         if mainInput == 1: # Have a drink
             # Drink from your canteen.
-            if drinks == 0:
+            if drinks < 0:
                 print("YOU RAN OUT OF WATER. SORRY CHUM!!!!!! ")
                 gameLost = True
                 queryReplay ()
@@ -244,7 +244,7 @@ def main ():
                     you += randint(1, 3) # Move from one to three miles.
                     # The kidnapper slowed you down.
             elif n == 4: # Your camel is burning across the desert sands.
-                you += randint(20) # Randomly move from one to twenty miles.
+                you += randint(6, 20) # Randomly move from one to twenty miles.
                 print("Your camel is burning across the desert sands. ")
                 days -= 3 # Subtract three days from your camel.
                 gameStatus ()
