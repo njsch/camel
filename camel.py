@@ -39,7 +39,8 @@ C O M M A N D S:
 4 -- stop for a rest, 
 5 -- status check, 
 6 -- hope for help,
-and 7 -- exit.
+7 -- exit,
+And 8 -- request help to list available commands.
 
 You will get a quart of water which will last you six drinks. 
 You must renew your water supply at an Oases completely. 
@@ -281,15 +282,28 @@ def main ():
                 exit ()
             else:
                 print ("Okay.")
+        if mainInput == 8# request program help
+            print("The commands you can choose from are: ")
+            print("1 -- drink from your canteen ")
+            print("2 -- move ahead moderate speed ")
+            print("3 -- move ahead fast ]speed ")
+            print("4 -- stop for a rest ")
+            print("5 -- status check ")
+            print("6 -- hope for help ")
+            print ("7 - exit")
+            print ("8 - get program help and list commands.")
+
         else: # Invalid option.
             print("Invalid Option. ")
             print("The commands you can choose from are: ")
             print("1 -- drink from your canteen ")
             print("2 -- move ahead moderate speed ")
-            print("3 -- move ahead fast speed ")
+            print("3 -- move ahead fast ]speed ")
             print("4 -- stop for a rest ")
             print("5 -- status check ")
             print("6 -- hope for help ")
+            print ("7 - exit")
+            print ("8 - get program help and list commands.")
 
 if __name__ == "__main__":
     main ()
