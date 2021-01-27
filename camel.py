@@ -79,7 +79,7 @@ def init():
 def printLoss ():
     """Print a random loss message from a randomised selection."""
     global n
-    n = randint(1, 4) # We have five loser statements.
+    n = randint(1, 4) # We have four loser statements.
     print("Your body and soul lay a rest in the sand. ")
     if n == 1: # This is the first loser statement.
         print("The National's Camel Union is not attending your funeral!!!!!! ")
