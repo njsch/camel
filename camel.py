@@ -156,7 +156,7 @@ def gameStatus ():
     
     if you > 25:
         hyenas += randint(1, 10)
-        print("The hyenas are " + you-hyenas + " miles behind you.")
+        print("The hyenas are {0} miles behind you.".format(you-hyenas))
     
     print("You have travelled {0} miles altogether, and have {1} more miles to go.".format (you, 200-you))
 
