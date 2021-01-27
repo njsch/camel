@@ -139,7 +139,7 @@ def gameStatus ():
     
     if gocommands < 3: # You had better get a drink.
         print("W A R N I N G -- GET A DRINK ")
-    if gocommands < 0: # Too many commands without drinking.
+    if gocommands == 0: # Too many commands without drinking.
         print("YOU RAN OUT OF WATER... SORRY CHUM!!!!!! ")
         gameLost = True
         queryReplay ()
@@ -188,7 +188,7 @@ def main ():
                 continue
         if mainInput == 1: # Have a drink
             # Drink from your canteen.
-            if drinks < 0:
+            if drinks == 0:
                 print("YOU RAN OUT OF WATER. SORRY CHUM!!!!!! ")
                 gameLost = True
                 queryReplay ()
@@ -282,7 +282,7 @@ def main ():
                 exit ()
             else:
                 print ("Okay.")
-        if mainInput == 8# request program help
+        if mainInput == 8: # request program help
             print("The commands you can choose from are: ")
             print("1 -- drink from your canteen ")
             print("2 -- move ahead moderate speed ")
