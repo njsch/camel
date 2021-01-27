@@ -227,7 +227,7 @@ def main ():
                 print("YOU HAVE BEEN CAPTURED BY some HIDDEN CRAZY KIDNAPPERS. ")
                 print("Luckily the local council has agreed to their ransom-demands...")
                 print("You have a new set of commands. ")
-                print("#7 attempt an escape, or #8 wait for payment.")
+                print("#9 attempt an escape, or #0 wait for payment.")
                 subInput = int(input("Your sub-command? "))
                 if subInput == 9: # The number seven was pressed.
                     # Attempt an escape.
