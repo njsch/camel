@@ -19,7 +19,7 @@ drinks = 0 # How many drinks you have left.
 gocommands = 0 # How many commands you have before you need another drink.
 days = 0 # How many good days your camel has left.
 n = 0 # Temporary random number usages.
-mainInput = 0 # Stores the user presses here.
+mainInput = None # Stores the user presses here.
 gameLost = False# Whether you have lost, mainly for the printLoss function.
 
 def queryInstructions (prompt):
@@ -139,7 +139,7 @@ def gameStatus ():
     
     if gocommands < 3: # You had better get a drink.
         print("W A R N I N G -- GET A DRINK ")
-    if gocommands == 0: # Too many commands without drinking.
+    if gocommands < 0: # Too many commands without drinking.
         print("YOU RAN OUT OF WATER... SORRY CHUM!!!!!! ")
         gameLost = True
         queryReplay ()
@@ -229,7 +229,7 @@ def main ():
                 print("You have a new set of commands. ")
                 print("#7 attempt an escape, or #8 wait for payment.")
                 subInput = int(input("Your sub-command? "))
-                if subInput == 7: # The number seven was pressed.
+                if subInput == 9: # The number seven was pressed.
                     # Attempt an escape.
                     n = randint(1, 2) # One of two things can happen.
                     if n == 1: # You made it.
@@ -238,10 +238,10 @@ def main ():
                         print("You were mortally wounded by a gunshot wound while trying to escape. ")
                         gameLost = True
                         queryReplay ()
-                elif subInput == 8: # The number eight was pressed.
+                elif subInput == 0: # The number eight was pressed.
                     print("Your ransom has been payed and you are free to go. The local council is collecting. ")
                     print("Just Wait ")
-                    sleep(10) # Stop for ten seconds.
+                    sleep(7) # Stop for ten seconds.
                     you += randint(1, 3) # Move from one to three miles.
                     # The kidnapper slowed you down.
             elif n == 4: # Your camel is burning across the desert sands.
@@ -282,7 +282,7 @@ def main ():
                 exit ()
             else:
                 print ("Okay.")
-        if mainInput == 8: # request program help
+        elif mainInput == 8: # request program help
             print("The commands you can choose from are: ")
             print("1 -- drink from your canteen ")
             print("2 -- move ahead moderate speed ")
@@ -295,15 +295,15 @@ def main ():
 
         else: # Invalid option.
             print("Invalid Option. ")
-            print("The commands you can choose from are: ")
+            print("The commands you can choose from are:")
             print("1 -- drink from your canteen ")
             print("2 -- move ahead moderate speed ")
-            print("3 -- move ahead fast ]speed ")
+            print("3 -- move ahead fast speed ")
             print("4 -- stop for a rest ")
             print("5 -- status check ")
             print("6 -- hope for help ")
-            print ("7 - exit")
-            print ("8 - get program help and list commands.")
+            print ("7 -- exit")
+            print ("8 -- get program help and list commands.")
 
 if __name__ == "__main__":
     main ()
