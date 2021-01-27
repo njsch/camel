@@ -3,7 +3,6 @@
 
 ## Contributors
 - Simon Craft - Programming Fixes and enhancements.
-- Damien Garwood <damien [at] daygar.plus.com> - Programming.
 - Nathaniel Schmidt <schmidty2244 [at] gmail.com> - Primary developer, programming and translation of code from Rapid Euphoria to Python.
 
 ## Development
