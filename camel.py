@@ -20,7 +20,7 @@ gocommands = 0 # How many commands you have before you need another drink.
 days = 0 # How many good days your camel has left.
 n = 0 # Temporary random number usages.
 mainInput = None # Stores the user presses here.
-gameLost = False# Whether you have lost, mainly for the printLoss function.
+gameLost = False# Whether you have lost, mainly for the printLoss function and main game loop.
 
 def queryInstructions (prompt):
     """Ask the user whether they want instructions, then recursively query the user for instructions until the user declines.
