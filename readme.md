@@ -1,5 +1,24 @@
 # camel
-## An Old MS-Dos Game Ported to the BrailleNote and now Python, Translated From Rapid Euphoria
+## An Old MS-Dos Game Ported to the BrailleNote and now platform-independent, written in Python, Translated From Rapid Euphoria
+
+## Introduction
+Welcome to Camel! Camel is a deliberately modified rendition of [an old MS-Dos game](https://siouxsays.wordpress.com/2016/07/04/your-camel-is-burning-across-the-desert-sands/) by David Ahl, reportedly originally called Desert.  It is a fairly basic text-based console game, where the idea is essentially that you have to get across 200 miles worth of desert, starting with six drinks and seven days of travel, with different speeds you can travel and environmental obstacles throughout the barren landscape; not the least of which are villains that can kill and eat you and your camel, sandstorms that slow you down, not to mention the thurst that will consume your life if you do not either get a drink or find an oasis if you have no drinks left.
+
+Originally written in the [Basic programming language](https://time.com/69316/basic/), it was ported to the [BrailleNote mPower / Classic](http://support.humanware.com/en-usa/support/other_products/braillenote) by Louis Bryant, being written in [Rapid Euphoria](https://www.rapideuphoria.com/) - note that this site is flagged as dangerous by some antivirus software.  There also used to be a Windows-specific executable available on his website which no longer exists.  You can still download it from [The Audio Games Archive](https://www.agarchive.net/pages/devs/braillesoft.html) but consider yourself warned that multiple antivirus programs, such as [Norton Antivirus](https://au.norton.com/) and [Malwarebytes](https://www.malwarebytes.com/), have also flagged this as containing dangerous / malicious content.  My aim was to create something both easier and safer to download and play.  So I translated the code from Euphoria to Python, which also means that the game is now cross-platform and you can run it on Windows, Mac or Linux.
+
+### Preliminary Note of Clarification
+Unfortunately, the original game was a bit arguably on the racist side of things &ndash; the reasons why don't matter.  But because of this, a player of the original game may notice that I have modified it.  This may or may not have been necessary to do; however, the issue is more about being considerate of someone else's potential background than whether or not I personally, or anyone else, am offended by anything.
+
+## Downloading and Installing the Game
+Game re-development is still in early stages.  An Alpha pre-release can be [downloaded here from Github](https://github.com/njsch/camel/files/5879037/camel.zip), or otherwise you can either [clone the repository containing the source code directly](https://github.com/njsch/camel/), or alternatively, [download the code file over https](https://raw.githubusercontent.com/njsch/camel/main/camel.py).
+
+If you downloaded the binary (compiled program), just make sure that you keep all of the files inside the folder called &ldquo;camel&rdquo;, such as &ldquo;base_library&rdquo;, &ldquo;python37.dll&rdquo; and &ldquo;camel.exe&rdquo;.  You can install it anywhere on your system but if you don't want to have to worry about having administrator privileges, put it somewhere in your user folder / directory i.e. in your documents folder.
+
+## Running the Game
+To run the program, click or press enter on the file camel.exe.  If you are presented with the Windows smart screen after this then make sure that you activate the link or button that says &ldquo;more options / actions&rdquo; and then press the space bar or enter key to activate the &ldquo;run anyway&rdquo; button.  The program should run by itself but if it doesn't then you can always run it from the terminal / shell in Mac or Linux, or if running windows then you can run it from either the classic and almost legacy Command Prompt, or the newer and maintained Windows Powershell.
+
+## Playing the Game
+
 
 ## Troubleshooting
 Contained below is a list of errors that are sometimes encountered when playing and solutions for attempting to fix them:
@@ -10,11 +29,11 @@ components installed.  You can install them by downloading the setup file [here]
 
 After installing, try running the game again.
 
-## Contributors
+## Development
+### Contributors
 - Simon Craft - Programming Fixes and enhancements.
 - Nathaniel Schmidt <schmidty2244 [at] gmail.com> - Primary developer, programming and translation of code from Rapid Euphoria to Python.
 
-## Development
 ### Conventions
 The following is a list of conventions that are strongly recommended to use in the source code:
 
@@ -22,3 +41,7 @@ The following is a list of conventions that are strongly recommended to use in t
 * Two line breaks between code blocks where possible
 * Camel-case for variable, functions / method and module names
 * Spaces between operators and operands where possible; and possibly between function / class names and their parentheses
+
+## Appendices
+### Appendix A: Original Language Source Files
+If you are curious, the original Basic language source files for Camel can be found [here](http://www.sparforte.com/sparforte15/examples/camel.html) or [here](https://raw.githubusercontent.com/lwiest/BASICCompiler/master/samples/CAMEL.BAS).
