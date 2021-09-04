@@ -4,7 +4,7 @@
 
 layout: home
 title: Welcome
-description: "An old MS-Dos game ported to a cross-platform solution in Python"
+description: "Camel is An old MS-Dos game ported to a cross-platform solution in Python"
 ---
 
 ## Introduction
@@ -15,7 +15,7 @@ Originally written in the [Basic programming language](https://time.com/69316/ba
 ### Preliminary Note of Clarification
 Unfortunately, the original game was arguably a bit on the racist side of things &ndash; the reasons why don't matter. But because of this, a player of the original game may notice that I have modified it. This may or may not have been necessary to do; however, the issue is more about being considerate of someone else's potential background than whether or not I personally, or anyone else, am offended by anything.
 
-In addition, this note of clarification is also not meant to denigrate the original author of the game or any of its re-writers in other programming languages. However, in case of any queries in this regard, it is meant to legitimately separate this particular code author, Nathaniel Schmidt, from any potential notions of endorsement of potentially inappropriate references, as featured in previous coded and binary-compiled runtime instances of the software in question.
+In addition, this note of clarification is also not meant to denigrate the original author of the game or any of its re-writers in other programming languages. However, in case of any queries in this regard, it is meant to categorically separate the particular code author (s) of this implementation of the game, namely Nathaniel Schmidt, from any potential notions of endorsement of potentially inappropriate references, as featured in previous coded and binary-compiled runtime instances of the software in question.
 
 ## Downloading and Installing the Game
 Game re-development is still in early stages. An Alpha pre-release can be [downloaded here from Github](https://github.com/njsch/camel/files/5879037/camel.zip), or otherwise you can either [clone the repository containing the source code directly](https://github.com/njsch/camel/), or alternatively, [download the code file over https](https://raw.githubusercontent.com/njsch/camel/main/camel.py).
