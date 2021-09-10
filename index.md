@@ -3,12 +3,12 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-title: Welcome
+title: Welcome to Camel!
 description: "Camel is An old MS-Dos game ported to a cross-platform solution in Python"
 ---
 
 ## Introduction
-Welcome to Camel! Camel is a deliberately modified rendition of [an old MS-Dos game](https://siouxsays.wordpress.com/2016/07/04/your-camel-is-burning-across-the-desert-sands/) by [David Ahl](https://en-academic.com/dic.nsf/enwiki/4789918), reportedly originally called Desert. It is a fairly basic text-based console game, where the idea is essentially that you have to get across 200 miles worth of desert, starting with six drinks and seven days of travel, with different speeds you can travel and environmental obstacles throughout the barren landscape; not the least of which are villains that can kill and eat you and your camel, sandstorms that slow you down, not to mention the thurst that will consume your life if you do not either get a drink or find an oasis if you have no drinks left.
+Camel is a deliberately modified rendition of [an old MS-Dos game](https://siouxsays.wordpress.com/2016/07/04/your-camel-is-burning-across-the-desert-sands/) by [David Ahl](https://en-academic.com/dic.nsf/enwiki/4789918), reportedly originally called Desert. It is a fairly basic text-based console game, where the idea is essentially that you have to get across 200 miles worth of desert, starting with six drinks and seven days of travel, with different speeds you can travel and environmental obstacles throughout the barren landscape; not the least of which are villains that can kill and eat you and your camel, sandstorms that slow you down, not to mention the thurst that will consume your life if you do not either get a drink or find an oasis if you have no drinks left.
 
 Originally written in the [Basic programming language](https://time.com/69316/basic/), it was ported to the [BrailleNote mPower / Classic](http://support.humanware.com/en-usa/support/other_products/braillenote) by Louis Bryant, being written in [Rapid Euphoria](https://www.rapideuphoria.com/) - note that this site is flagged as dangerous by some antivirus software. There also used to be a Windows-specific executable available on his website which no longer exists. You can still download it from [The Audio Games Archive](https://www.agarchive.net/pages/devs/braillesoft.html) but consider yourself warned that multiple antivirus programs, such as [Norton Antivirus](https://au.norton.com/) and [Malwarebytes](https://www.malwarebytes.com/), have also flagged this as containing dangerous / malicious content. My aim was to create something both easier and safer to download and play. So I translated the code from Euphoria to Python, which also means that the game is now cross-platform and you can run it on Windows, Mac or Linux.
 
