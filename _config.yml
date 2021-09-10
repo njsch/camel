@@ -23,7 +23,7 @@ name: Nathaniel Schmidt
 description: An old MS-Dos text-based console game ported to a cross-platform solution.
 domain: "njsch.github.io"
 baseurl: "/camel/" # the subpath of your site, e.g. /blog
-url: "https://njsch.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://njsch.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  njsch
 
 # Build settings
