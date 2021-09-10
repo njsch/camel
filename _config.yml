@@ -20,7 +20,6 @@
 
 title: Camel
 name: Nathaniel Schmidt
-email: schmidty2244@gmail.com
 description: An old MS-Dos text-based console game ported to a cross-platform solution.
 domain: "njsch.github.io"
 baseurl: "/camel/" # the subpath of your site, e.g. /blog
