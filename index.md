@@ -56,6 +56,9 @@ components installed. You can install them by downloading the setup file [here](
 After installing, try running the game again.
 
 ## Development
+### Project Locations
+The Game can be found either on [Github](https://github.com/njsch/camel/), or on its primitive [project website](https://njschmidt.id.au/camel/).
+
 ### Contributors
 - Simon Craft - Programming Fixes and enhancements.
 - Nathaniel Schmidt <schmidty2244 [at] gmail.com> - Primary developer, programming and translation of code from Rapid Euphoria to Python.
