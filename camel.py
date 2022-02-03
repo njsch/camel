@@ -1,13 +1,19 @@
-"""Camel: A dos game ported to a cross platform solution.
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Camel: A dos game ported to a cross platform solution.
+
 Was originally: Camel Source Code for the BrailleNote, written in Rapid Euphoria
 Original author: Louis Bryant
 Modified by Nathaniel Schmidt <schmidty2244@gmail.com>
-Date modified: 09/09/2020; 23/01/2021
+Date modified: 09/09/2020; 23/01/2021; 03/02/2022
 
 You have permission to modify and redistribute this code and software with or without changes.
 Pulse Data International, Rapid Deployment Software, Programmers of other included files, and I take no responsibility for damages you cause by your modifying this software.
 
-This code and software is provided 'as is' without any implied or express warranty."""
+This code and software is provided 'as is' without any implied or express warranty.
+"""
 
 from random import randint
 from time import sleep
